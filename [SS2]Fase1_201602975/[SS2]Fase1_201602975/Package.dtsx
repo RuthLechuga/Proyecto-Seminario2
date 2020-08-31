@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="8/31/2020 2:32:17 AM"
@@ -11,9 +11,115 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionGUID="{E682F7A4-740C-4D0D-BE37-3D43BFE66D9F}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{BA58378C-3403-4C7B-B408-F72EF98BA57E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
-  <DTS:Executables />
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-M4KODE6.seminariodos201602975]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{B0A32A02-E58A-4CF6-B1D9-22C3672B8F96}"
+      DTS:ObjectName="DESKTOP-M4KODE6.seminariodos201602975">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-M4KODE6;Initial Catalog=seminariodos201602975;Integrated Security=True;Application Name=SSIS-Package-{B0A32A02-E58A-4CF6-B1D9-22C3672B8F96}DESKTOP-M4KODE6.seminariodos201602975;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{045C1B85-FDF0-42EF-B4FB-AF9B88610077}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Delimitador">
+      <DTS:VariableValue
+        DTS:DataType="8">|</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1F52A01C-1C8C-46AB-859E-E237D5B00A2F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtensionCompra">
+      <DTS:VariableValue
+        DTS:DataType="8">.comp</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3D40157A-9CCD-413D-B6E4-3C039C5C5BE2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtensionVenta">
+      <DTS:VariableValue
+        DTS:DataType="8">.vent</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4D0073EF-F598-4C3B-97E7-141A8D384B9A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderError">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\mini_\Desktop\Proyecto-Seminario2\Errores</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EB1424B4-5456-4D8A-94C8-9BEE90254A86}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderOrigen">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\mini_\Desktop\Proyecto-Seminario2\ArchivosEntrada</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{00DCFE45-30A3-49DC-93E0-3C0F1F03636C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TablaDestino">
+      <DTS:VariableValue
+        DTS:DataType="8">Pivote</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{30294E33-5608-46DF-B6EA-12961944E7A6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B0A32A02-E58A-4CF6-B1D9-22C3672B8F96}"
+          SQLTask:SqlStatementSource="DELETE FROM PIVOTE;&#xA;DELETE FROM COMPRA;&#xA;DELETE FROM VENTA;&#xA;DELETE FROM PROVEEDOR;&#xA;DELETE FROM FECHA;&#xA;DELETE FROM SUCURSAL;&#xA;DELETE FROM PRODUCTO;&#xA;DELETE FROM VENDEDOR;&#xA;DELETE FROM CLIENTE;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="199,24" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
