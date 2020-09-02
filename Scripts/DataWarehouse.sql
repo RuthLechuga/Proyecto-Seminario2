@@ -3,28 +3,28 @@ use seminariodos201602975;
 CREATE TABLE PIVOTE(
 	Fecha varchar(15),
 	CodProveedor varchar(15),
-	NombreProveedor varchar(200),
-	DireccionProveedor varchar(300),
+	NombreProveedor varchar(150),
+	DireccionProveedor varchar(250),
 	NumeroProveedor varchar(15),
-	WebProveedor varchar(10),
+	WebProveedor varchar(1),
 	CodProducto varchar(15),
-	NombreProducto varchar(200),
+	NombreProducto varchar(150),
 	GrupoProducto varchar(50),
 	TipoProducto varchar(50),
 	CodSucursal varchar(15),
-	NombreSucursal varchar(200),
-	DireccionSucursal varchar(500),
+	NombreSucursal varchar(150),
+	DireccionSucursal varchar(250),
 	Region varchar(25),
 	Departamento varchar(25),
 	Zona varchar(10),
 	Unidades varchar(15),
 	CodigoCliente varchar(15),
-	NombreCliente varchar(200),
-	TipoCliente varchar(50),
-	DireccionCliente varchar(500),
+	NombreCliente varchar(150),
+	TipoCliente varchar(15),
+	DireccionCliente varchar(250),
 	NumeroCliente varchar(25),
 	CodVendedor varchar(15),
-	NombreVendedor varchar(200),
+	NombreVendedor varchar(150),
 	PrecioUnitario varchar(15)
 );
 
@@ -91,3 +91,5 @@ CREATE TABLE COMPRA(
 	FK_Fecha varchar(10) FOREIGN KEY REFERENCES FECHA(CodFecha),
 	Unidades int NOT NULL
 );
+
+SELECT * FROM Pivote;
